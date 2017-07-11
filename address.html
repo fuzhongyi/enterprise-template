@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>联系我们</title>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=c58oxxp8FIDxvQ8KksErSuA8"></script>
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+</head>
+<body>
+<div id="allmap"></div>
+<script type="text/javascript">
+var map = new BMap.Map("allmap");
+var point = new BMap.Point(105.927049,29.359495);
+var marker = new BMap.Marker(point);  // 创建标注
+map.addOverlay(marker);              // 将标注添加到地图中
+map.centerAndZoom(point, 18);
+var opts = {
+        width : 260,     // 信息窗口宽度
+        height: 100,// 信息窗口高度
+        panel:"panel",
+        enableAutoPan:true
+}
+var content=`<div style="font-size:14px;line-height: 1.2em; margin:0;padding-top: 0;">
+    		<p style="font-weight: 600">重庆市恒德环保科技有限公司</p>
+    		<p><span style="color: #1e49d4;">地址：</span>重庆市永川区卧龙路475号2-10号</p>
+    		<span style="color: #1e49d4;">电话：</span>023-XXXXXXXX
+		</div>`;
+var infoWindow=new BMap.InfoWindow(content,opts);
+marker.openInfoWindow(infoWindow);
+marker.addEventListener("click", function (e) {
+	this.openInfoWindow(infoWindow);
+});
+</script>
+</body>
+</html>
