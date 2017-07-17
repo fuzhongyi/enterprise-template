@@ -2,5 +2,5 @@
 #layui
 #swiper
 #jquery.waypoints\
-[点击预览](https://lunamean.github.io/enterprise-template) 
+[点击预览](https://fuzhongyi.github.io/enterprise-template) 
 
